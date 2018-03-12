@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "npm": "^5.7.1",
+    "query-string": "^5.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
-    "thunk": "0.0.1"
+    "redux-thunk": "^2.2.0",
+    "thunk": "0.0.1",
+    "video-react": "^0.9.4"
   },
   "scripts": {
     "start": "react-scripts start",
