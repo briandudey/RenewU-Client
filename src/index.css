@@ -1,5 +1,32 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.video-box {
+	border: solid white 2px;
+}
+
+.container {
+	height: 200px;
+	width: 200px;
+	border: solid grey 2px;
+}
+
+#status span.status {
+	display: none;
+	font-weight: bold;
+}
+span.status.complete {
+	color: green;
+}
+span.status.incomplete {
+	color: red;
+}
+#status.complete span.status.complete {
+	display: inline;
+}
+#status.incomplete span.status.incomplete {
+	display: inline;
 }

@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
-import VideoList from './components/video-list';
+import LandingPage from './components/landing-page';
 import store from './store';
 
 ReactDOM.render(
 	<Provider store={store}>
-		<VideoList />
+		<LandingPage />
 	</Provider>,
 	document.getElementById('root')
 );
