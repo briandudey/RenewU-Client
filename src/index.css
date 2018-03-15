@@ -6,12 +6,24 @@ body {
 
 .video-box {
 	border: solid white 2px;
+	width: 50%;
+	height: 200;
 }
 
 .container {
 	height: 200px;
 	width: 200px;
 	border: solid grey 2px;
+}
+
+.meditate {
+	height: 199px;
+	width: 199px;
+}
+
+.watch {
+	height: 100px;
+	width: 199px;
 }
 
 #status span.status {

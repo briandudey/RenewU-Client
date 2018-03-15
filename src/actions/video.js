@@ -6,7 +6,7 @@ export const fetchVideosRequest = () => ({
 });
 
 export const FETCH_VIDEO_SUCCESS = 'FETCH_VIDEO_SUCCESS';
-export const fetchVideosSuccess = video => ({
+export const fetchVideosSuccess = (video, index) => ({
 	type: FETCH_VIDEO_SUCCESS,
 	video
 });
@@ -16,6 +16,28 @@ export const fetchVideosError = error => ({
 	type: FETCH_VIDEO_ERROR,
 	error
 });
+
+// export const FETCH_POST_REQUEST = 'FETCH_POST_REQUEST';
+// export const fetchPostRequest = () => ({
+// type:	FETCH_POST_REQUEST
+// })
+
+// export const fetchPostRequest = () => dispatch {
+// 	dispatch(fetchPostRequest());
+// 	fetch('`${API_BASE_URL}/watch`', {
+//     method: 'post',
+//     body: JSON.stringify(opts)
+//   }
+// 	.then(res => {
+// 		if(!res.ok) {
+// 			return Promise.reject(res.statusText);
+// 		}
+// 		return res.json();
+// 		})
+// 		.catch(err => {
+// 			dispatch(fetchVideosError(err));
+// 		}));
+// 	}
 
 export const fetchVideos = () => dispatch => {
 	dispatch(fetchVideosRequest());

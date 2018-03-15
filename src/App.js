@@ -1,57 +1,27 @@
 import React, { Component } from 'react';
-import WatchList from './components/watchlist';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import LandingPage from './components/landing-page';
+import VideoPage from './components/video-page';
+import MeditationPage from './components/meditation-page';
 
-var videos = [
-	{
-		service: 'youtube',
-		video: 'https://www.youtube.com/watch?v=XxVg_s8xAms'
-	},
-	{
-		service: 'vimeo',
-		video: 'https://vimeo.com/151715092'
-	},
-	{
-		service: 'dailymotion',
-		video: 'http://www.dailymotion.com/video/x3oc771_la-voiture-du-futur_tech'
-	}
-];
+import { API_BASE_URL } from './config';
+import './App.css';
 
-export default class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			videoIndex: 0
-		};
-	}
-
-	goToVideo(index) {
-		let videoIndex = index;
-		if (videoIndex < 0) {
-			videoIndex = videos.length - 1;
-		} else if (videoIndex >= videos.length) {
-			videoIndex = 0;
-		}
-		this.setState({
-			videoIndex
-		});
-	}
-
-	render() {
-		const { service, video } = videos[this.state.videoIndex];
-		return (
-			<div>
-				<WatchList service={service} video={video} width={500} height={270} />
-				<p>
-					<span>{service}: </span>
-					<span>{video}</span>
-				</p>
-				<button onClick={this.goToVideo.bind(this, this.state.videoIndex - 1)}>
-					Previous
-				</button>
-				<button onClick={this.goToVideo.bind(this, this.state.videoIndex + 1)}>
-					Next
-				</button>
+export default function App(props) {
+	return (
+		<Router>
+			<div className="app">
+				<header>
+					<h1>
+						<Link to="/">What's This?</Link>
+					</h1>
+				</header>
+				<main>
+					<Route exact path="/" component={LandingPage} />
+					<Route path="/watch" component={VideoPage} />
+					<Route path="/meditation" component={MeditationPage} />
+				</main>
 			</div>
-		);
-	}
+		</Router>
+	);
 }
