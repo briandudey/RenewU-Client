@@ -1,0 +1,52 @@
+.reg-container {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 150px 150px 150px 100px;
+	grid-template-areas:
+		'sidebar-1 content sidebar-2'
+		'sidebar-1 content sidebar-2'
+		'sidebar-1 content sidebar-2'
+		'footer footer footer';
+}
+
+.itemnumber1 {
+	border: solid pink 2px;
+	background-color: pink;
+	grid-area: sidebar-1;
+	background-image: url(https://markkinointinyronen.net/wp-content/uploads/2016/02/yellow_marker_texture_stock_by_enchantedgal_stock.jpg);
+}
+.itemnumber2 {
+	border: solid purple 2px;
+	background-color: purple;
+	text-align: center;
+	grid-area: content;
+	background-repeat: no-repeat;
+	background-image: url(https://media.giphy.com/media/13AK9gO1EHko5q/giphy.gif);
+}
+.itemnumber3 {
+	border: solid black 2px;
+	background-color: black;
+	grid-area: sidebar-2;
+	background-image: url(https://markkinointinyronen.net/wp-content/uploads/2016/02/yellow_marker_texture_stock_by_enchantedgal_stock.jpg);
+}
+
+.footer {
+	border: solid green 2px;
+	background-color: orange;
+	grid-area: footer;
+}
+
+@media (max-width: 700px) {
+	.reg-container {
+		grid-template-areas:
+			'content content content'
+			'content content content'
+			'content content content'
+			'sidebar-1 sidebar-2 sidebar-2'
+			'footer footer footer';
+	}
+	.itemnumber3 {
+		background-image: url(https://img0.etsystatic.com/135/1/5362874/il_340x270.908723908_3cnz.jpg);
+	}
+}

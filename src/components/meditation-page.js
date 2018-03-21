@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { fetchMeditations } from '../actions/meditation';
 import MusicPlayer from 'react-responsive-music-player';
-import '../index.css';
+import './meditation-page.css';
+// import Timer from './timer';
 
 export class MeditationPage extends React.Component {
 	componentDidMount() {
@@ -18,9 +19,15 @@ export class MeditationPage extends React.Component {
 
 		return (
 			<div>
-				<h1>Relax. Breathe. Begin.</h1>
+				<div className="wrapper">
+					<div className="header">
+						<h1>Relax. Breathe. Begin.</h1>
+					</div>
+					<div className="water" />
 
-				<div>{player}</div>
+					<div className="music">{player}</div>
+					<div className="timer" />
+				</div>
 			</div>
 		);
 	}

@@ -1,19 +1,12 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
-// import VideoPage from './components/video-page';
-// import MeditationPage from './components/meditation-page';
 import { connect } from 'react-redux';
-import NotFoundPage from './components/pages/not-found-page';
-import LoginPage from './components/auth/login-page';
-import HeaderBar from './components/auth/header';
-import LandingPage from './components/landing-page';
-import Dashboard from './components/auth/dashboard';
-import RegistrationPage from './components/auth/registration-page';
-import VideoPage from './components/video-page';
-import MeditationPage from './components/meditation-page';
-import { refreshAuthToken } from './actions/auth';
+import { Route, withRouter } from 'react-router-dom';
 
-import './App.css';
+import HeaderBar from './header-bar';
+import LandingPage from './landing-page';
+import Dashboard from './dashboard';
+import RegistrationPage from './registration-page';
+import { refreshAuthToken } from '../actions/auth';
 
 export class App extends React.Component {
 	componentDidUpdate(prevProps) {
@@ -52,11 +45,6 @@ export class App extends React.Component {
 				<Route exact path="/LandingPage" component={LandingPage} />
 				<Route exact path="/dashboard" component={Dashboard} />
 				<Route exact path="/register" component={RegistrationPage} />
-				<Route exact path="/watch" component={VideoPage} />
-				<Route exact path="/meditation" component={MeditationPage} />
-				{/* <Route path="*" component={NotFoundPage} /> */}
-				<Route exact path="/" component={LoginPage} />
-				}
 			</div>
 		);
 	}

@@ -17,27 +17,33 @@ export const fetchVideosError = error => ({
 	error
 });
 
-// export const FETCH_POST_REQUEST = 'FETCH_POST_REQUEST';
-// export const fetchPostRequest = () => ({
-// type:	FETCH_POST_REQUEST
-// })
+export const FETCH_POST_REQUEST = 'FETCH_POST_REQUEST';
+export const fetchPostRequest = () => ({
+	type: FETCH_POST_REQUEST
+});
 
-// export const fetchPostRequest = () => dispatch {
-// 	dispatch(fetchPostRequest());
-// 	fetch('`${API_BASE_URL}/watch`', {
-//     method: 'post',
-//     body: JSON.stringify(opts)
-//   }
-// 	.then(res => {
-// 		if(!res.ok) {
-// 			return Promise.reject(res.statusText);
-// 		}
-// 		return res.json();
-// 		})
-// 		.catch(err => {
-// 			dispatch(fetchVideosError(err));
-// 		}));
-// 	}
+export const fetchPost = videoIndex => (dispatch, getState) => {
+	const jwt = getState().auth.authToken;
+	dispatch(fetchPostRequest());
+	console.log(videoIndex);
+	fetch(`${API_BASE_URL}/userwatchID`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			authorization: `Bearer ${jwt}`
+		},
+		body: JSON.stringify({ userWatchID: videoIndex })
+	})
+		.then(res => {
+			if (!res.ok) {
+				return Promise.reject(res.statusText);
+			}
+			return res.json();
+		})
+		.catch(err => {
+			dispatch(fetchVideosError(err));
+		});
+};
 
 export const fetchVideos = () => dispatch => {
 	dispatch(fetchVideosRequest());

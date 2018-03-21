@@ -1,0 +1,57 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: 20% 60% 20%;
+	grid-column-gap: 1em;
+}
+
+.header {
+	grid-column: 1 / -1;
+	text-align: center;
+	color: rgba(39, 38, 38, 0.829);
+}
+
+.water {
+	background-image: url('https://media.giphy.com/media/tNbLf5OqFmTHq/giphy.gif');
+	background-repeat: round;
+}
+
+.music {
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 10px rgba(0, 1, 0, 0.1);
+	padding: 20px;
+}
+
+.timer {
+	background-image: url('https://media.giphy.com/media/tNbLf5OqFmTHq/giphy.gif');
+	background-repeat: round;
+}
+
+@media (max-width: 950px) {
+	.header {
+		grid-column: 1 / -1;
+	}
+	.water {
+		grid-column: 1 / -1;
+		display: block;
+		width: 100%;
+		border-bottom: 3px #333 solid;
+	}
+
+	.music {
+		grid-column: 1 / -1;
+	}
+
+	.timer {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (max-width: 680px) {
+	.social-container {
+		width: 95%;
+	}
+	.accordian {
+		width: 100%;
+		min-width: 350px;
+	}
+}

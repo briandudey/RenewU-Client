@@ -1,6 +1,9 @@
 import React from 'react';
+import { fetchPost } from '../actions/video';
+import { connect } from 'react-redux';
+import { fetchUserWatchID } from '../actions/user-watch-id';
 
-export default class VideoIndex extends React.Component {
+export class VideoIndex extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -8,8 +11,12 @@ export default class VideoIndex extends React.Component {
 			src: this.props.videos[0]
 		};
 	}
+	componentDidMount() {
+		this.props.dispatch(fetchUserWatchID());
+	}
 
 	render() {
+		console.log(this.props.userWatchID);
 		return (
 			<div>
 				<video
@@ -21,10 +28,12 @@ export default class VideoIndex extends React.Component {
 								index: nextIndex,
 								src: this.props.videos[nextIndex]
 							});
+							this.props.dispatch(fetchPost(nextIndex));
 						}
 					}}
-					src={this.props.videos[this.state.index]}
+					src={this.props.videos[this.props.userWatchID]}
 					controls
+					// this.state.index
 					// autoplay="false"
 					playsinline
 					crossorigin
@@ -33,3 +42,8 @@ export default class VideoIndex extends React.Component {
 		);
 	}
 }
+const mapStateToProps = state => ({
+	userWatchID: state.userWatchID.userWatchID
+});
+
+export default connect(mapStateToProps)(VideoIndex);

@@ -1,0 +1,41 @@
+.main-contain {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 20px;
+}
+
+.cards {
+	background: rgba(233, 235, 95, 0.377);
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-gap: 10px;
+	align-items: center;
+}
+
+.video-box {
+	background-image: url('https://i.pinimg.com/originals/df/32/40/df3240d5cc5a9c6e371a39999536b74a.jpg');
+	grid-column: 1 / -1;
+	height: 500px;
+	width: 100%;
+	border-top: solid black 4px;
+	border-bottom: solid black 4px;
+	border-left: solid white 4px;
+	border-right: solid white 4px;
+
+	text-align: center;
+}
+.video-c {
+	grid-column: 1 / -1;
+	height: 500px;
+	text-align: center;
+}
+
+.cards {
+	border-top: solid yellow 2px;
+}
+
+/* .buddha-image {
+	size: 100%;
+} */
