@@ -13,12 +13,24 @@ export function RegistrationPage(props) {
 	}
 	return (
 		<div className="home reg-container">
+			<div className="register-head">
+				<h1>Welcome to Renew-U</h1>
+				<h4>Join the meditation revolution</h4>
+			</div>
 			<div className="itemnumber1" />
 			<div className="itemnumber2">
 				<h2>Begin Your Journey Here</h2>
 				<RegistrationForm />
 				<br />
-				<Link to="/">Login</Link>
+				<div className="reg-footer">
+					<h6>
+						if you are already registered with RenewU simply
+						<Link className="reg-link" to="/">
+							{' '}
+							Login
+						</Link>
+					</h6>
+				</div>
 			</div>
 			<div className="itemnumber3" />
 			<div className="footer" />

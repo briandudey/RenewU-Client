@@ -1,40 +1,49 @@
 .reg-container {
 	display: grid;
-	grid-gap: 20px;
+	grid-gap: 60px;
 	grid-template-columns: 1fr 4fr 1fr;
-	grid-template-rows: 150px 150px 150px 100px;
+	grid-template-rows: 100px 180px 180px 180px 15px;
 	grid-template-areas:
+		'header header header'
 		'sidebar-1 content sidebar-2'
 		'sidebar-1 content sidebar-2'
 		'sidebar-1 content sidebar-2'
-		'footer footer footer';
+		'reg reg reg';
+}
+
+.register-head h1 {
+	grid-area: header;
+	font-size: 35px;
 }
 
 .itemnumber1 {
-	border: solid pink 2px;
-	background-color: pink;
+	border: solid white 4px;
+	background-color: #1b4194c7;
 	grid-area: sidebar-1;
-	background-image: url(https://markkinointinyronen.net/wp-content/uploads/2016/02/yellow_marker_texture_stock_by_enchantedgal_stock.jpg);
 }
+
 .itemnumber2 {
-	border: solid purple 2px;
-	background-color: purple;
+	border: solid black 4px;
+	color: white;
 	text-align: center;
 	grid-area: content;
 	background-repeat: no-repeat;
 	background-image: url(https://media.giphy.com/media/13AK9gO1EHko5q/giphy.gif);
+	background-repeat: round;
 }
 .itemnumber3 {
-	border: solid black 2px;
-	background-color: black;
+	border: solid white 4px;
+	background-color: #1b4194c7;
 	grid-area: sidebar-2;
-	background-image: url(https://markkinointinyronen.net/wp-content/uploads/2016/02/yellow_marker_texture_stock_by_enchantedgal_stock.jpg);
 }
 
-.footer {
-	border: solid green 2px;
-	background-color: orange;
-	grid-area: footer;
+.reg-footer {
+	background-color: rgba(243, 234, 217, 0.096);
+	grid-area: reg;
+	color: rgb(241, 233, 233);
+	text-decoration: none;
+	font-size: 20px;
+	padding: 10px;
 }
 
 @media (max-width: 700px) {

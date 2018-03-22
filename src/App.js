@@ -3,7 +3,6 @@ import { Route, withRouter } from 'react-router-dom';
 // import VideoPage from './components/video-page';
 // import MeditationPage from './components/meditation-page';
 import { connect } from 'react-redux';
-import NotFoundPage from './components/pages/not-found-page';
 import LoginPage from './components/auth/login-page';
 import HeaderBar from './components/auth/header';
 import LandingPage from './components/landing-page';
@@ -54,9 +53,7 @@ export class App extends React.Component {
 				<Route exact path="/register" component={RegistrationPage} />
 				<Route exact path="/watch" component={VideoPage} />
 				<Route exact path="/meditation" component={MeditationPage} />
-				{/* <Route path="*" component={NotFoundPage} /> */}
 				<Route exact path="/" component={LoginPage} />
-				}
 			</div>
 		);
 	}

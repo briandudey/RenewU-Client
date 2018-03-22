@@ -1,6 +1,6 @@
 .wrapper {
 	display: grid;
-	grid-template-columns: 20% 60% 20%;
+	grid-template-columns: 19% 60% 19%;
 	grid-column-gap: 1em;
 }
 
@@ -10,20 +10,29 @@
 	color: rgba(39, 38, 38, 0.829);
 }
 
+.home-button {
+	height: 50px;
+}
+
 .water {
 	background-image: url('https://media.giphy.com/media/tNbLf5OqFmTHq/giphy.gif');
 	background-repeat: round;
+	border: solid white 12px;
+	border-style: inset;
 }
 
 .music {
 	background: rgba(255, 255, 255, 0.2);
 	box-shadow: 0 0 10px rgba(0, 1, 0, 0.1);
-	padding: 20px;
+	padding: 15px;
 }
 
 .timer {
 	background-image: url('https://media.giphy.com/media/tNbLf5OqFmTHq/giphy.gif');
 	background-repeat: round;
+	border: solid white 12px;
+	border-style: inset;
+	margin-right: 10px;
 }
 
 @media (max-width: 950px) {
