@@ -23,8 +23,10 @@ For production, Heroku and Netlify were used.
 
 #### The App
 The production-ready version of the application is at: https://renew-u.netlify.com
-Demo Username:demo@brian-dudey.com
-Demo Password:pass1234567
+
+### Demo Credentials
+###### username: brian-dudey-demo
+###### password: pass1234567
 
 #### Login Page
 ![Alt text](https://github.com/thinkful-ei18/RenewU/blob/master/LoginPage.png?raw=true "RenewU Login Page")
