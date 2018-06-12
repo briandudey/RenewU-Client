@@ -24,6 +24,8 @@ export class App extends React.Component {
 	}
 
 	startPeriodicRefresh() {
+		// This model of refreshing exists elswhere
+		// We should consider merging those chunks of code into a single, reusable module
 		this.refreshInterval = setInterval(
 			() => this.props.dispatch(refreshAuthToken()),
 			60 * 60 * 1000 // One hour

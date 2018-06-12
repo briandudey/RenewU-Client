@@ -6,6 +6,12 @@ import { fetchUserWatchID } from '../actions/user-watch-id';
 export class VideoIndex extends React.Component {
 	constructor(props) {
 		super(props);
+		/*
+		 * It may be redundant to store the src in the state, since you're using another state
+		 * value as an index into `videos`.
+		 *
+		 * Having them both provides an opportunity for them to get out of sync
+		 */
 		this.state = {
 			index: 0,
 			src: this.props.videos[0]

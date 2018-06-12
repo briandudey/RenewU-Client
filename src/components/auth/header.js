@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import './login-page.css';
 
 export class HeaderBar extends React.Component {
+	// If I recall `login` is defined in an `actions` file... perhaps this should be defined there as well, rather than
+	// inside this component
 	logOut() {
 		this.props.dispatch(clearAuth());
 		clearAuthToken();
@@ -14,6 +16,11 @@ export class HeaderBar extends React.Component {
 	render() {
 		// Only render the log out button if we are logged in
 		let logOutButton;
+		// With appropriate binding, you can replace
+		//    onClick={() => this.logOut()}
+		//
+		// with
+		//    onClick={this.logOut}
 		if (this.props.loggedIn) {
 			logOutButton = <button onClick={() => this.logOut()}>Log out</button>;
 		}

@@ -24,7 +24,8 @@ const store = createStore(
 );
 const authToken = loadAuthToken();
 if (authToken) {
-	const token = authToken;
+	const token = authToken; // This seems redundant; unless I'm missing something you could just pass `authToken` into
+							 // the next call
 	store.dispatch(setAuthToken(token));
 	store.dispatch(refreshAuthToken());
 }

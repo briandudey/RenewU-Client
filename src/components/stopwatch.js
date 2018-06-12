@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+/*
+ * It looks like this component is not complete... however, it's not quite clear whether this should be a component
+ * or not... will it have a visual element to it?
+ */
+
 export default class StopWatch extends React.Component{
   state= {lapse: 0, running: false}
   handleRunClick = () => {
@@ -24,7 +29,7 @@ export default class StopWatch extends React.Component{
       this.setState({lapse: 0, running: false})
     }
     componentWillUnmount() {
-      clearInterval(this.timer)      
+      clearInterval(this.timer)
     }
     render(){
       const{lapse, running} = this.state

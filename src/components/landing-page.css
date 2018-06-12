@@ -1,3 +1,15 @@
+/*
+ * Given that you're using CSS and not some pre-processor, it may pay to apply some rules to your CSS
+ * Take a look at BEM for instance.
+ *
+ * In addition, arranging your selectors in alphabetical order might make it a lot easier to find classes and also avoid
+ * duplicated (or contradictory) selectors
+ *
+ *
+ * However, I'd generally recommend switching to something like SCSS with supports nesting selectors as well
+ * as @imports which would allow you to break out some of the stuff here.
+ */
+
 button {
 	background-color: rgba(0, 0, 0, 0.349);
 	border: solid white 4px;

@@ -24,6 +24,7 @@ export class LoginForm extends React.Component {
 				className="login-form"
 				onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
 				{error}
+				{/* Doesn't your Input component already have a <label> element in it? */}
 				<label htmlFor="username">Username</label>
 				<Field
 					component={Input}

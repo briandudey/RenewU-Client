@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './landing-page.css';
 
+// Style is user's choice... personally, however, I think 4 spaces per level might be a little excessive, given the level
+// of nesting here... 2 would probably suffice...
+//
+// Still, I'm not going to quibble over this: whatever works for you
+
 export default class LandingPage extends React.Component {
 	render() {
 		return (
 			<div>
+				{/* Two divs without class names is a surprise to me */}
 				<div>
 					<div className="album">
 						<div className="lp-header">
@@ -34,6 +40,7 @@ export default class LandingPage extends React.Component {
 
 						<div className="albums small-card">
 							<Link to="/watch">
+                                {/* I think `aria` might not be the right attribute here, but I'm not 100% sure */}
 								<img
 									className="image"
 									src="https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/cc/85/7b/cc857bb1-ea03-e6e1-0066-82b31f9768fa/mzl.dktrsbia.png/600x600bf.jpg"
