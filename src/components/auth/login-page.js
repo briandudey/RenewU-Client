@@ -15,6 +15,12 @@ export function LoginPage(props) {
 		<div>
 			<div className="home log-container">
 				<div className="register-head">
+					{/*
+						hX tags are designed for defining headers of different levels. That's not what
+						it looks like you're doing here.
+						If you're using it to describe stylistic choices, you're better off using divs with
+						classes instead
+					*/}
 					<h1>Welcome to Renew-U</h1>
 					<h4>Your home for meditation and contemplation</h4>
 					<h6>to begin, please login or register</h6>
@@ -23,6 +29,10 @@ export function LoginPage(props) {
 				<div className="log-itemnumber2">
 					<h2>Pause. Breathe. Begin.</h2>
 					<LoginForm />
+					{/*
+						A <br /> indicates that you're trying to make some vertical space. A more appropriate choice might
+						be to set the padding or margin of this div
+					*/}
 					<br />
 				</div>
 				<div className="log-itemnumber3" />

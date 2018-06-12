@@ -8,7 +8,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
 	if (action.type === actions.FETCH_MEDITATION_REQUEST) {
-		console.log('REDUCER');
+		console.log('REDUCER'); // This looks like it might be left over from some debugging, right?
 		return Object.assign({}, state, {
 			loading: true
 		});

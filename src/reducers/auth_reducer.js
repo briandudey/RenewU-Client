@@ -1,43 +1,59 @@
-import {
-	SET_AUTH_TOKEN,
-	CLEAR_AUTH,
-	AUTH_REQUEST,
-	AUTH_SUCCESS,
-	AUTH_ERROR
-} from '../actions/auth';
+/*
+ * You might want to take a look at `redux-actions`
+ *
+ * It takes a lot of the boiler-plate out of some of this code.
+ * In addition, it makes it easier to combine your reducers and your actions.
+ *
+ * I'm going to implement this with `redux-actions` just as an example... there's nothing wrong with doing
+ * it this way - you should decide which you prefer.
+ *
+ * You would then put your `login` methods and such into a stand-alone file which takes a reference to a Store... or
+ * use some other approach
+ */
 
-const initialState = {
-	authToken: null, // authToken !== null does not mean it has been validated
-	currentUser: null,
-	loading: false,
-	error: null
-};
+import {handleActions, createActions} from 'redux-actions';
 
-export default function reducer(state = initialState, action) {
-	if (action.type === SET_AUTH_TOKEN) {
-		return Object.assign({}, state, {
-			authToken: action.authToken
-		});
-	} else if (action.type === CLEAR_AUTH) {
-		return Object.assign({}, state, {
-			authToken: null,
-			currentUser: null
-		});
-	} else if (action.type === AUTH_REQUEST) {
-		return Object.assign({}, state, {
-			loading: true,
-			error: null
-		});
-	} else if (action.type === AUTH_SUCCESS) {
-		return Object.assign({}, state, {
-			loading: false,
-			currentUser: action.currentUser
-		});
-	} else if (action.type === AUTH_ERROR) {
-		return Object.assign({}, state, {
-			loading: false,
-			error: action.error
-		});
-	}
-	return state;
-}
+const actions = createActions(
+    {
+        SET_AUTH_TOKEN: authToken => ({authToken}),
+        AUTH_SUCCESS: currentUser => ({currentUser}),
+        AUTH_ERROR: error => ({error}),
+    },
+    'AUTH_REQUEST',
+    'CLEAR_AUTH'
+);
+const reducers = handleActions(
+    {
+        [actions.setAuthToken]: (state, {payload: {authToken}}) => ({
+            ...state,
+            authToken,
+        }),
+        [actions.clearAuth]: (state) => {
+            return {
+                ...state,
+                authToken: null,
+                currentUser: null
+            };
+        },
+        [actions.authRequest]: (state) => {
+            return {
+                ...state,
+                loading: true,
+                error: null
+            };
+        },
+        [actions.authSuccess]: (state, {payload: {currentUser}}) => ({
+            ...state,
+            loading: false,
+            currentUser
+        }),
+        [actions.authError]: (state, {payload: {error}}) => ({
+            ...state,
+            loading: false,
+            error
+        })
+    }
+);
+
+export {actions, reducers};
+

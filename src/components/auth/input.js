@@ -18,6 +18,17 @@ export default class Input extends React.Component {
 			warning = <div className="form-warning">{this.props.meta.warning}</div>;
 		}
 
+		/*
+		 * I learned this recently...
+		 *
+		 * If you do
+		 *
+		 *  <label>
+		 *      <input ...>
+		 *  </label
+		 *
+		 * you don't need the `for` attribute. This can be really handy for re-usable components like this one
+		 */
 		return (
 			<div className="form-input">
 				<label htmlFor={this.props.input.name}>
