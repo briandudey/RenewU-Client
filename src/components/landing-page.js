@@ -10,9 +10,9 @@ import './landing-page.css';
 export default class LandingPage extends React.Component {
 	render() {
 		return (
-			<div>
+			<div className="landing-page">
 				{/* Two divs without class names is a surprise to me */}
-				<div>
+				<div className="album-container">
 					<div className="album">
 						<div className="lp-header">
 							<h1>Welcome to Renew-U</h1>
@@ -37,27 +37,17 @@ export default class LandingPage extends React.Component {
 								</p>
 							</div>
 						</div>
+						<Albums
+							link="/watch"
+							imageSrc="https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/cc/85/7b/cc857bb1-ea03-e6e1-0066-82b31f9768fa/mzl.dktrsbia.png/600x600bf.jpg"
+							imageAlt="silhouette of Buddha meditating"
+							imageAria="click to go to meditation page"
+							title="Watch"
+							description="Begin your meditation journey here - explore the fascinating
+and complex world of meditation - earn badges as you progress
+through each unique video."
+						/>
 
-						<div className="albums small-card">
-							<Link to="/watch">
-                                {/* I think `aria` might not be the right attribute here, but I'm not 100% sure */}
-								<img
-									className="image"
-									src="https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/cc/85/7b/cc857bb1-ea03-e6e1-0066-82b31f9768fa/mzl.dktrsbia.png/600x600bf.jpg"
-									alt="silhouette of Buddha meditating"
-									aria="click to go to meditation page"
-								/>
-							</Link>
-
-							<div className="details">
-								<h2>WATCH</h2>
-								<p>
-									Begin your meditation journey here - explore the fascinating
-									and complex world of meditation - earn badges as you progress
-									through each unique video.
-								</p>
-							</div>
-						</div>
 						<div className="albums small-card">
 							<img
 								className="image"
@@ -112,7 +102,8 @@ export default class LandingPage extends React.Component {
 									<a
 										href="https://www.youtube.com/channel/UCNkATUf-b99WpSOQQkdZzDg"
 										target="_blank"
-										rel="noopener noreferrer">
+										rel="noopener noreferrer"
+									>
 										YouTube
 									</a>
 								</div>
@@ -129,7 +120,8 @@ export default class LandingPage extends React.Component {
 									<a
 										href="https://twitter.com/BrianDudey"
 										target="_blank"
-										rel="noopener noreferrer">
+										rel="noopener noreferrer"
+									>
 										Twitter
 									</a>
 								</div>
@@ -143,7 +135,8 @@ export default class LandingPage extends React.Component {
 									<a
 										href="www.facebook.com"
 										target="_blank"
-										rel="noopener noreferrer">
+										rel="noopener noreferrer"
+									>
 										facebook
 									</a>
 								</div>
@@ -157,7 +150,8 @@ export default class LandingPage extends React.Component {
 									<a
 										href="https://www.linkedin.com/in/brianraydudey/"
 										target="_blank"
-										rel="noopener noreferrer">
+										rel="noopener noreferrer"
+									>
 										LinkedIn
 									</a>
 								</div>
@@ -171,7 +165,8 @@ export default class LandingPage extends React.Component {
 									<a
 										href="www.instagram.com"
 										target="_blank"
-										rel="noopener noreferrer">
+										rel="noopener noreferrer"
+									>
 										Instagram
 									</a>
 								</div>
@@ -188,7 +183,8 @@ export default class LandingPage extends React.Component {
 									<a
 										href="https://github.com/briandudey"
 										target="_blank"
-										rel="noopener noreferrer">
+										rel="noopener noreferrer"
+									>
 										GitHub
 									</a>
 								</div>
